@@ -9,11 +9,12 @@
     justify-items: center;
     grid-template-columns: auto auto auto auto auto;
 }
-
-.btn{
+button {
+    width: 90%;
+    padding: 10px;
     margin: 5px;
-}
-
+  }
+  
 .card{
     height: 100%;
     width: 400px;
