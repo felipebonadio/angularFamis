@@ -1,0 +1,9 @@
+.btn-sup{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.btn{
+    margin: 5px;
+}
