@@ -1,50 +1,43 @@
 <mat-card class="card mat-elevation-z5">
-    <mat-card-header>
-        <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
-        <mat-card-title>
-            Mesa nº
-        </mat-card-title>
-    </mat-card-header>
-    <mat-card-actions>
-        <button class="btn" mat-stroked-button color="primary">Adicionar pedidos</button>
-    </mat-card-actions>
+  <mat-card-header>
+    <img
+      mat-card-avatar
+      src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+    />
+    <mat-card-title> Mesa nº </mat-card-title>
+  </mat-card-header>
+  <mat-card-actions>
+    <button class="btn" mat-stroked-button color="primary">
+      Adicionar produtos
+    </button>
+  </mat-card-actions>
 
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h2>Lista de pedidos</h2>
-        </div>
-        <div class="panel-body">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Horário</th>
-                        <th>Quantidade</th>
-                        <th>Observação</th>
-                        <th>Opções</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Coca</td>
-                        <td>18:80</td>
-                        <td>1</td>
-                        <td>Gelo</td>
-                        <td>
-                            <button mat-fab color="primary">
-                                <mat-icon>delete</mat-icon>
-                            </button>
-                            <button mat-fab color="primary">
-                                <mat-icon>update</mat-icon>
-                            </button>
-
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-
-
+  <h2>Lista de pedidos</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Horário</th>
+        <th>Quantidade</th>
+        <th>Observação</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Coca</td>
+        <td>18:80</td>
+        <td>1</td>
+        <td>Gelo</td>
+        <td>
+          <button color="primary">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button color="primary">
+            <mat-icon>update</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </mat-card>

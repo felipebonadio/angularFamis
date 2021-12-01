@@ -3,7 +3,6 @@
   justify-items: center;
   grid-template-columns: auto auto auto auto auto;
 }
-
 button {
   width: 90%;
   padding: 10px;
@@ -14,7 +13,6 @@ button {
   border-radius: 10px;
   background-color: #f6f6f6;
   margin: 0 auto;
-  
   width: 75%;
   height: 150px;
   display: grid;

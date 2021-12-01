@@ -14,6 +14,12 @@ import { FooterComponent } from './template/footer/footer.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { ModalComponent } from './modal/modal.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { CollaboratorComponent } from './collaborator/collaborator.component';
+import { MenuComponent } from './menu/menu.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +31,9 @@ import { MatIconModule } from '@angular/material/icon';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    ModalComponent,
+    CollaboratorComponent,
+    MenuComponent,
    
   ],
   imports: [
@@ -33,7 +42,9 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,19 +1,94 @@
 <div class="btn-sup">
-    <button routerLink="/home" class="btn" mat-stroked-button color="primary">
-        Pedidos
-    </button>
+  <button routerLink="/home" class="btn" mat-stroked-button color="primary">
+    Pedidos
+  </button>
 
-    <button routerLink="/orders" class="btn" mat-stroked-button color="primary">
-        Cadastro de pedidos
-    </button>
+  <button routerLink="/orders" class="btn" mat-stroked-button color="primary">
+    Cadastro de pedidos
+  </button>
 
-    <button class="btn" mat-stroked-button color="primary">Reservas</button>
+  <button class="btn" mat-stroked-button color="primary">Reservas</button>
 
-    <button routerLink="/checkout" class="btn" mat-stroked-button color="primary">
-        Caixa
-    </button>
+  <button routerLink="/checkouts" class="btn" mat-stroked-button color="primary">
+    Caixa
+  </button>
 
-    <button routerLink="/admin" class="btn" mat-stroked-button color="primary">
-        Configurações
-    </button>
+  <button routerLink="/admin" class="btn" mat-stroked-button color="primary">
+    Configurações
+  </button>
 </div>
+
+<div class="container">
+  <div class="sub-container">
+    <button (click)="openModal('updateTable')" mat-stroked-button color="primary">
+      Editar quantidade de mesas
+    </button>
+    <button routerLink="/collaborators" mat-stroked-button color="primary">
+      Funcionários
+    </button>
+    <button (click)="openModal('updateSchedule')" mat-stroked-button color="primary">
+      Editar horário de funcionamento
+    </button>
+    <button routerLink="/menu" mat-stroked-button color="primary">
+      Editar cardápio
+    </button>
+  </div>
+</div>
+
+<jw-modal id="updateTable">
+  <div class="modal">
+    <p>Alteração de número de mesas</p>
+    <br />
+    <label>Quantidade atual: 20</label>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Novo número de mesas</mat-label>
+      <input matInput type="number" />
+    </mat-form-field>    
+    <div class="row">
+      <button
+        type="submit"
+        (click)="closeModal('updateTable')"
+        mat-stroked-button
+        color="primary"
+      >
+        Salvar
+      </button>
+      <button (click)="closeModal('updateTable')" mat-stroked-button
+        color="accent"      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</jw-modal>
+
+<jw-modal id="updateSchedule">
+  <div class="modal">
+    <p>Alteração de Horário</p>
+    <br />
+    <label>Horário atual: 18:00 - 24:00</label>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Novo horário de abertrura</mat-label>
+      <input matInput type="time" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Novo horário de encerramento</mat-label>
+      <input matInput type="time" />
+    </mat-form-field>
+    <div class="row">
+      <button
+        type="submit"
+        (click)="closeModal('updateSchedule')"
+        mat-stroked-button
+        color="primary"
+      >
+        Salvar
+      </button>
+      <button (click)="closeModal('updateSchedule')" mat-stroked-button
+        color="accent"      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</jw-modal>
