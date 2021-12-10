@@ -19,6 +19,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { MenuComponent } from './menu/menu.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -44,7 +46,10 @@ import { MenuComponent } from './menu/menu.component';
     MatCardModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

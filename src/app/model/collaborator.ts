@@ -1,12 +1,12 @@
 import { Address } from "./address";
 
 export interface Collaborator{
-    id: string;
+    id?: string;
     name: string;
     lastName: string;
     phone: string;
     cpf: string;
     email: string;
     password: string;
-    adress: Address;
+    address: Address;
 }

@@ -1,7 +1,8 @@
 export interface Address{
-    id: string;
+    id?: string;
     cep: string;
     place: string;
+    number: string;
     district: string;
     city:string;
     state: string;
