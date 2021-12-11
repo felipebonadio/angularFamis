@@ -7,7 +7,7 @@ import { Collaborator } from '../model/collaborator';
   providedIn: 'root'
 })
 export class CollaboratorService {
-  entityUrl = "não implementado ainda";
+  entityUrl = 'http://localhost:8080/collaborators';
   
   collaborator: Collaborator | undefined;
 

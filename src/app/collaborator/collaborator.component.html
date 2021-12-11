@@ -10,7 +10,8 @@
     routerLink="/checkouts"
     class="btn"
     mat-stroked-button
-    color="primary">
+    color="primary"
+  >
     Caixa
   </button>
   <button routerLink="/admin" class="btn" mat-stroked-button color="primary">
@@ -80,82 +81,103 @@
 </div>
 
 <jw-modal id="saveCollaborator">
-  <div class="container">
-    <p class="title-user">Insira os dados para o cadastro</p>
-    <div class="row">
-      <form (ngSubmit)="onSave(collaborator)">
-        <mat-form-field appearance="fill">
-          <mat-label>Nome</mat-label>
-          <input matInput [(ngModel)]="collaborator.name" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Sobrenome</mat-label>
-          <input matInput [(ngModel)]="collaborator.lastName" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Telefone</mat-label>
-          <input matInput [(ngModel)]="collaborator.phone" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>CPF</mat-label>
-          <input matInput [(ngModel)]="collaborator.cpf" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Email</mat-label>
-          <input matInput [(ngModel)]="collaborator.email" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Senha</mat-label>
-          <input matInput [(ngModel)]="collaborator.password" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>CEP</mat-label>
-          <input matInput [(ngModel)]="collaborator.address.cep" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Rua</mat-label>
-          <input matInput [(ngModel)]="collaborator.address.place" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Número</mat-label>
-          <input matInput [(ngModel)]="collaborator.address.number" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Bairro</mat-label>
-          <input matInput [(ngModel)]="collaborator.address.district" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Cidade</mat-label>
-          <input matInput [(ngModel)]="collaborator.address.city" type="text" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Estado</mat-label>
-          <input matInput [(ngModel)]="collaborator.address.state" type="text" />
-        </mat-form-field>
-        <div class="row">
-          <div class="col s12">
-            <button
-              class="w-100"
-              type="submit"
-              (click)="closeModal('saveCollaborator')"
-              mat-stroked-button
-              color="primary">
-              Salvar
-            </button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <button
-              class="w-100"
-              (click)="closeModal('saveCollaborator')"
-              mat-stroked-button
-              color="accent">
-              Cancelar
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+  <p class="title-user">Insira os dados para o cadastro</p>
+
+  <form (ngSubmit)="onSave(collaborator)" [formGroup]="collaboratorForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="name" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Sobrenome</mat-label>
+      <input
+        matInput
+        formControlName="lastName"
+        type="text"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Telefone</mat-label>
+      <input
+        matInput
+        formControlName="phone"
+        type="text"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="cpf" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        type="text"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input
+        matInput
+        formControlName="password"
+        type="text"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>CEP</mat-label>
+      <input
+        matInput
+        formControlName="addressCep"
+        type="text"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Rua</mat-label>
+      <input
+        matInput        
+        formControlName="addressPlace"
+        type="text"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Número</mat-label>
+      <input
+        matInput        
+        formControlName="addressNumber"
+        type="text"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Bairro</mat-label>
+      <input
+        matInput       
+        formControlName="addressDistrict"
+        type="text"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Cidade</mat-label>
+      <input
+        matInput      
+        formControlName="addressCity"
+        type="text"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Estado</mat-label>
+      <input
+        matInput      
+        formControlName="addressState"
+        type="text"/>
+    </mat-form-field>
+
+    <button
+      class="w-100"
+      type="submit"
+      (click)="closeModal('saveCollaborator')"
+      mat-stroked-button
+      color="primary">
+      Salvar
+    </button>
+
+    <button
+      class="w-100"
+      (click)="closeModal('saveCollaborator')"
+      mat-stroked-button
+      color="accent">
+      Cancelar
+    </button>
+  </form>
 </jw-modal>

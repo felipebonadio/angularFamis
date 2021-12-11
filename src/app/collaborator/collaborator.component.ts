@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { GuardsCheckStart, Router } from '@angular/router';
 import { ModalService } from '../modal/modal.service';
 import { Address } from '../model/address';
 import { Collaborator } from '../model/collaborator';
@@ -12,10 +12,17 @@ import { CollaboratorService } from './collaborator.service';
   styleUrls: ['./collaborator.component.css'],
 })
 export class CollaboratorComponent implements OnInit {
-
-  
   error: Error | undefined;
-  constructor(private modalService: ModalService,  private formBuilder: FormBuilder, private router : Router, private collaboratorService: CollaboratorService) {    
+  collaborator: Collaborator;
+  address: Address;
+  constructor(
+    private modalService: ModalService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private collaboratorService: CollaboratorService
+  ) {
+    this.collaborator = {} as Collaborator;
+    this.address = {} as Address;
   }
 
   ngOnInit(): void {}
@@ -27,38 +34,42 @@ export class CollaboratorComponent implements OnInit {
     this.modalService.close(id);
   }
 
-  address: Address = {
-    id: '',
-    cep: '',
-    place: '',
-    number: '',
-    district:'',
-    city:'',
-    state: ''
-  };
-
-  collaborator: Collaborator = {
+  collaboratorForm = this.formBuilder.group({
     name: '',
     lastName: '',
-    cpf:'',
+    phone: '',
+    cpf: '',
     email: '',
     password: '',
-    phone: '',
-    address: {     
-      cep: '',
-      place: '',
-      number: '',
-      district:'',
-      city:'',
-      state: ''
-    }
-  };
+    addressCep: '',
+    addressPlace: '',
+    addressNumber: '',
+    addressDistrict: '',
+    addressCity: '',
+    addressState: '',
+  });
 
   onSave(collaborator: Collaborator) {
-    this.collaboratorService.createCollaborator(this.collaborator).subscribe( newcollaborator => {
-      this.collaborator = newcollaborator;},
-         error => this.error = error as any);
-         this.router.navigateByUrl(`/collaborators`);
-    }      
+    this.collaborator.name = this.collaboratorForm.value.name;
+    this.collaborator.lastName = this.collaboratorForm.value.lastName;
+    this.collaborator.phone = this.collaboratorForm.value.phone;
+    this.collaborator.cpf = this.collaboratorForm.value.cpf;
+    this.collaborator.email = this.collaboratorForm.value.email;
+    this.collaborator.password = this.collaboratorForm.value.password;
+    this.address.cep = this.collaboratorForm.value.addressCep;
+    this.address.place = this.collaboratorForm.value.addressPlace;
+    this.address.number = this.collaboratorForm.value.addressNumber;
+    this.address.district = this.collaboratorForm.value.addressDistrict;
+    this.address.city = this.collaboratorForm.value.addressCity;
+    this.address.state = this.collaboratorForm.value.addressState;
+    this.collaborator.address = this.address;
+    console.warn(collaborator);
+    this.collaboratorService.createCollaborator(collaborator).subscribe(
+      (newcollaborator) => {
+        this.collaborator = newcollaborator;
+      },
+      (error) => (this.error = error as any)
+    );
+    this.router.navigateByUrl(`/collaborators`);
   }
-
+}

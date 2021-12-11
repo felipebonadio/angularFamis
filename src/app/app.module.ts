@@ -15,13 +15,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { ModalComponent } from './modal/modal.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { MenuComponent } from './menu/menu.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import { HttpClientModule } from '@angular/common/http';
     ModalComponent,
     CollaboratorComponent,
     MenuComponent,
-   
   ],
   imports: [
     BrowserModule,
@@ -49,9 +47,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule    
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
