@@ -21,6 +21,7 @@ import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { MenuComponent } from './menu/menu.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CollaboratorDetailsComponent } from './collaborator-details/collaborator-details.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     ModalComponent,
     CollaboratorComponent,
     MenuComponent,
+    CollaboratorDetailsComponent,
   ],
   imports: [
     BrowserModule,

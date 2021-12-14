@@ -14,6 +14,7 @@ import { CollaboratorService } from './collaborator.service';
 export class CollaboratorComponent implements OnInit {
   error: Error | undefined;
   collaborator: Collaborator;
+  collaborators : Collaborator[] | undefined;
   address: Address;
   constructor(
     private modalService: ModalService,
@@ -25,7 +26,9 @@ export class CollaboratorComponent implements OnInit {
     this.address = {} as Address;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.collaboratorService.getCollaborators().subscribe((collaborators) => (this.collaborators = collaborators));
+  }
   openModal(id: string) {
     this.modalService.open(id);
   }
