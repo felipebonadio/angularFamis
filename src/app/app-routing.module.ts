@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CollaboratorDetailsComponent } from './collaborator-details/collaborator-details.component';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
@@ -44,6 +45,9 @@ const routes: Routes = [
   {
     path: 'menu',
     component: MenuComponent
+  },{
+    path: 'collaborators/:id',
+    component: CollaboratorDetailsComponent
   }
 ];
 

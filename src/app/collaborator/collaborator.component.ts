@@ -42,6 +42,7 @@ export class CollaboratorComponent implements OnInit {
     lastName: '',
     phone: '',
     cpf: '',
+    role: '',
     email: '',
     password: '',
     addressCep: '',
@@ -57,6 +58,7 @@ export class CollaboratorComponent implements OnInit {
     this.collaborator.lastName = this.collaboratorForm.value.lastName;
     this.collaborator.phone = this.collaboratorForm.value.phone;
     this.collaborator.cpf = this.collaboratorForm.value.cpf;
+    this.collaborator.role = this.collaboratorForm.value.role;
     this.collaborator.email = this.collaboratorForm.value.email;
     this.collaborator.password = this.collaboratorForm.value.password;
     this.address.cep = this.collaboratorForm.value.addressCep;
@@ -73,6 +75,6 @@ export class CollaboratorComponent implements OnInit {
       },
       (error) => (this.error = error as any)
     );
-    this.router.navigateByUrl(`/collaborators`);
+    window.location.reload();   
   }
 }
