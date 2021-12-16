@@ -6,12 +6,7 @@
     Cadastro de pedidos
   </button>
   <button class="btn" mat-stroked-button color="primary">Reservas</button>
-  <button
-    routerLink="/checkouts"
-    class="btn"
-    mat-stroked-button
-    color="primary"
-  >
+  <button routerLink="/checkouts" class="btn" mat-stroked-button color="primary">
     Caixa
   </button>
   <button routerLink="/admin" class="btn" mat-stroked-button color="primary">
@@ -19,11 +14,7 @@
   </button>
 </div>
 <div class="center">
-  <button
-    class="center"
-    mat-icon-button
-    (click)="openModal('saveCollaborator')"
-  >
+  <button class="center" mat-icon-button (click)="openModal('saveCollaborator')">
     <mat-icon> save </mat-icon>
     Adicionar novo colaborador
   </button>
@@ -44,16 +35,16 @@
     <tbody *ngFor="let collaborator of collaborators">
       <tr>
         <td>{{collaborator.name + " " + collaborator.lastName}}</td>
-        <td>{{collaborator.phone}}</td>    
+        <td>{{collaborator.phone}}</td>
         <td>{{collaborator.role}}</td>
         <td>
           <button color="primary">
             <a [routerLink]="['/collaborators', collaborator.id]">
-            <mat-icon>update</mat-icon>
-          </a>
+              <mat-icon>update</mat-icon>
+            </a>
           </button>
         </td>
-      </tr>     
+      </tr>
     </tbody>
   </table>
 </div>
@@ -68,17 +59,11 @@
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Sobrenome</mat-label>
-      <input
-        matInput
-        formControlName="lastName"
-        type="text"/>
+      <input matInput formControlName="lastName" type="text" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Telefone</mat-label>
-      <input
-        matInput
-        formControlName="phone"
-        type="text"/>
+      <input matInput formControlName="phone" type="text" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>CPF</mat-label>
@@ -90,75 +75,42 @@
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
-      <input
-        matInput
-        formControlName="email"
-        type="text"/>
+      <input matInput formControlName="email" type="text" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Senha</mat-label>
-      <input
-        matInput
-        formControlName="password"
-        type="text"/>
+      <input matInput formControlName="password" type="text" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>CEP</mat-label>
-      <input
-        matInput
-        formControlName="addressCep"
-        type="text"/>
+      <input matInput formControlName="addressCep" type="text" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Rua</mat-label>
-      <input
-        matInput        
-        formControlName="addressPlace"
-        type="text"/>
+      <input matInput formControlName="addressPlace" type="text" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Número</mat-label>
-      <input
-        matInput        
-        formControlName="addressNumber"
-        type="text"/>
+      <input matInput formControlName="addressNumber" type="text" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Bairro</mat-label>
-      <input
-        matInput       
-        formControlName="addressDistrict"
-        type="text"/>
+      <input matInput formControlName="addressDistrict" type="text" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Cidade</mat-label>
-      <input
-        matInput      
-        formControlName="addressCity"
-        type="text"/>
+      <input matInput formControlName="addressCity" type="text" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Estado</mat-label>
-      <input
-        matInput      
-        formControlName="addressState"
-        type="text"/>
+      <input matInput formControlName="addressState" type="text" />
     </mat-form-field>
 
-    <button
-      class="w-100"
-      type="submit"
-      (click)="closeModal('saveCollaborator')"
-      mat-stroked-button
-      color="primary">
+    <button class="w-100" type="submit" (click)="closeModal('saveCollaborator')" mat-stroked-button color="primary">
       Salvar
     </button>
 
-    <button
-      class="w-100"
-      (click)="closeModal('saveCollaborator')"
-      mat-stroked-button
-      color="accent">
+    <button class="w-100" (click)="closeModal('saveCollaborator')" mat-stroked-button color="accent">
       Cancelar
     </button>
   </form>

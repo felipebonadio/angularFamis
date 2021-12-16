@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Collaborator } from '../model/collaborator';
+import { Restaurant } from '../model/restaurant';
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +26,10 @@ export class CollaboratorService {
     return this.http.post<Collaborator>(this.entityUrl, Collaborator);
   }
 
-  deleteCollaborator(CollaboratorId: string): Observable<string> {
-    return this.http.delete<string>(this.entityUrl + '/' + CollaboratorId);
+  deleteCollaborator(collaboratorId: string): Observable<string> {
+    return this.http.delete<string>(this.entityUrl + '/' + collaboratorId);
   }
-  updateCollaborator(CollaboratorId: string, Collaborator: Collaborator): Observable<Collaborator> {
-    return this.http.put<Collaborator>(this.entityUrl + '/' + CollaboratorId, Collaborator);
+  updateCollaborator(collaboratorId: string, Collaborator: Collaborator): Observable<Collaborator> {
+    return this.http.put<Collaborator>(this.entityUrl + '/' + collaboratorId, Collaborator);
   }
 }

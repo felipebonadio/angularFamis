@@ -1,23 +1,52 @@
 <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{collaborator.name + " " + collaborator.lastName}}</mat-card-title>
-      <mat-card-subtitle>{{collaborator.role}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>{{collaborator.phone}}</p>
-      <p>{{collaborator.cpf}}</p>
-      <p>{{collaborator.email}}</p>
-      <p>{{collaborator.password}}</p>
-      <p>{{collaborator.address.cep}}</p>
-      <p>{{collaborator.address.place}}</p>
-      <p>{{collaborator.address.district}}</p>
-      <p>{{collaborator.address.city}}</p>
-      <p>{{collaborator.address.state}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>Editar</button>
-      <button mat-button>Apagar</button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{collaborator.name + " " + collaborator.lastName}}</mat-card-title>
+    <mat-card-subtitle>{{collaborator.role}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>{{collaborator.phone}}</p>
+    <p>{{collaborator.cpf}}</p>
+    <p>{{collaborator.email}}</p>
+    <p>{{collaborator.password}}</p>
+    <p>{{collaborator.address.cep}}</p>
+    <p>{{collaborator.address.place}}</p>
+    <p>{{collaborator.address.district}}</p>
+    <p>{{collaborator.address.city}}</p>
+    <p>{{collaborator.address.state}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Editar</button>
+    <button mat-button (click)="openModal('delete')">Apagar</button>
+  </mat-card-actions>
+</mat-card>
+
+<jw-modal id="delete">
+  <div class="container">
+    <p class="title-user">Tem certeza que deseja excluir?</p>
+    <div class="row">
+      <div class="row">
+        <div class="col s12">
+          <button class="w-100" (click)="onDelete(collaborator)" mat-stroked-button color="primary">Excluir</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button class="w-100" (click)="closeModal('delete')" mat-stroked-button color="accent">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</jw-modal>
+
+<jw-modal id="deleteOk">
+  <div class="container">
+    <p class="title-user">Excluído com sucesso</p>
+    <div class="row">
+      <div class="col s12">
+        <button class="w-100" (click)="closeModal('deleteOk')" mat-stroked-button color="accent">Ok</button>
+      </div>
+    </div>
+  </div>
+</jw-modal>

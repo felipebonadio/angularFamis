@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalService } from '../modal/modal.service';
+import { ModalService } from '../service/modal.service';
 
 @Component({
   selector: 'app-admin',
@@ -12,6 +12,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   openModal(id: string) {
     this.modalService.open(id);
   }

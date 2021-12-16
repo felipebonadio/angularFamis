@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
 
-import { ModalService } from './modal.service';
+import { ModalService } from '../service/modal.service';
 
 @Component({
   selector: 'jw-modal',

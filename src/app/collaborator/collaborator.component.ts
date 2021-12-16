@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { GuardsCheckStart, Router } from '@angular/router';
-import { ModalService } from '../modal/modal.service';
+import { ModalService } from '../service/modal.service';
 import { Address } from '../model/address';
 import { Collaborator } from '../model/collaborator';
-import { CollaboratorService } from './collaborator.service';
+import { CollaboratorService } from '../service/collaborator.service';
 
 @Component({
   selector: 'app-collaborator',
@@ -14,12 +13,12 @@ import { CollaboratorService } from './collaborator.service';
 export class CollaboratorComponent implements OnInit {
   error: Error | undefined;
   collaborator: Collaborator;
-  collaborators : Collaborator[] | undefined;
+  collaborators: Collaborator[] | undefined;
   address: Address;
+
   constructor(
     private modalService: ModalService,
     private formBuilder: FormBuilder,
-    private router: Router,
     private collaboratorService: CollaboratorService
   ) {
     this.collaborator = {} as Collaborator;
@@ -27,8 +26,11 @@ export class CollaboratorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.collaboratorService.getCollaborators().subscribe((collaborators) => (this.collaborators = collaborators));
+    this.collaboratorService
+      .getCollaborators()
+      .subscribe((collaborators) => (this.collaborators = collaborators));
   }
+
   openModal(id: string) {
     this.modalService.open(id);
   }
@@ -68,13 +70,13 @@ export class CollaboratorComponent implements OnInit {
     this.address.city = this.collaboratorForm.value.addressCity;
     this.address.state = this.collaboratorForm.value.addressState;
     this.collaborator.address = this.address;
-    console.warn(collaborator);
+
     this.collaboratorService.createCollaborator(collaborator).subscribe(
       (newcollaborator) => {
         this.collaborator = newcollaborator;
       },
       (error) => (this.error = error as any)
     );
-    window.location.reload();   
+    window.location.reload();
   }
 }
