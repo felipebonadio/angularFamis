@@ -18,7 +18,7 @@ import { ModalComponent } from './modal/modal.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
-import { MenuComponent } from './menu/menu.component';
+import { ProductComponent } from './product/product.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CollaboratorDetailsComponent } from './collaborator-details/collaborator-details.component';
@@ -36,7 +36,7 @@ import { CollaboratorDetailsComponent } from './collaborator-details/collaborato
     FooterComponent,
     ModalComponent,
     CollaboratorComponent,
-    MenuComponent,
+    ProductComponent,
     CollaboratorDetailsComponent,
   ],
   imports: [

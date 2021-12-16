@@ -5,9 +5,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { CollaboratorDetailsComponent } from './collaborator-details/collaborator-details.component';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './menu/menu.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrderComponent } from './order/order.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {
@@ -43,8 +43,8 @@ const routes: Routes = [
     component: CollaboratorComponent
   },
   {
-    path: 'menu',
-    component: MenuComponent
+    path: 'products',
+    component: ProductComponent
   },{
     path: 'collaborators/:id',
     component: CollaboratorDetailsComponent
