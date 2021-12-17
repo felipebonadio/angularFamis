@@ -13,16 +13,14 @@ import { CollaboratorService } from '../service/collaborator.service';
 export class CollaboratorComponent implements OnInit {
   error: Error | undefined;
   collaborator: Collaborator;
-  collaborators: Collaborator[] | undefined;
+  collaborators: Collaborator[];
   address: Address;
 
   constructor(
-    private modalService: ModalService,
-    private formBuilder: FormBuilder,
-    private collaboratorService: CollaboratorService
-  ) {
+    private modalService: ModalService, private formBuilder: FormBuilder, private collaboratorService: CollaboratorService) {
     this.collaborator = {} as Collaborator;
     this.address = {} as Address;
+    this.collaborators = [];
   }
 
   ngOnInit(): void {

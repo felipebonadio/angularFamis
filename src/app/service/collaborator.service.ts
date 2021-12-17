@@ -8,11 +8,10 @@ import { Restaurant } from '../model/restaurant';
   providedIn: 'root'
 })
 export class CollaboratorService {
-  entityUrl = 'http://localhost:8080/collaborators';
-  
-  collaborator: Collaborator | undefined;
+  entityUrl = 'http://localhost:8080/collaborators';  
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {    
+  }
 
   getCollaborators(): Observable<Collaborator[]> {
     return this.http.get<Collaborator[]>(this.entityUrl);
