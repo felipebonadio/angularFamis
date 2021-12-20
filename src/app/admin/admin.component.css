@@ -43,3 +43,9 @@ button {
   flex-direction: row;
   width: 40%;
 }
+
+#center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

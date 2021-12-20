@@ -1,5 +1,4 @@
 import { Address } from './address';
-import { Restaurant } from './restaurant';
 
 export interface Collaborator {
   id: string;

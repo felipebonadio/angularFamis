@@ -17,7 +17,10 @@ export class CollaboratorComponent implements OnInit {
   address: Address;
 
   constructor(
-    private modalService: ModalService, private formBuilder: FormBuilder, private collaboratorService: CollaboratorService) {
+    private modalService: ModalService,
+    private formBuilder: FormBuilder,
+    private collaboratorService: CollaboratorService
+  ) {
     this.collaborator = {} as Collaborator;
     this.address = {} as Address;
     this.collaborators = [];
@@ -54,27 +57,29 @@ export class CollaboratorComponent implements OnInit {
   });
 
   onSave(collaborator: Collaborator) {
-    this.collaborator.name = this.collaboratorForm.value.name;
-    this.collaborator.lastName = this.collaboratorForm.value.lastName;
-    this.collaborator.phone = this.collaboratorForm.value.phone;
-    this.collaborator.cpf = this.collaboratorForm.value.cpf;
-    this.collaborator.role = this.collaboratorForm.value.role;
-    this.collaborator.email = this.collaboratorForm.value.email;
-    this.collaborator.password = this.collaboratorForm.value.password;
-    this.address.cep = this.collaboratorForm.value.addressCep;
-    this.address.place = this.collaboratorForm.value.addressPlace;
-    this.address.number = this.collaboratorForm.value.addressNumber;
-    this.address.district = this.collaboratorForm.value.addressDistrict;
-    this.address.city = this.collaboratorForm.value.addressCity;
-    this.address.state = this.collaboratorForm.value.addressState;
-    this.collaborator.address = this.address;
+    if (this.collaboratorForm.value.name !== '') {
+      this.collaborator.name = this.collaboratorForm.value.name;
+      this.collaborator.lastName = this.collaboratorForm.value.lastName;
+      this.collaborator.phone = this.collaboratorForm.value.phone;
+      this.collaborator.cpf = this.collaboratorForm.value.cpf;
+      this.collaborator.role = this.collaboratorForm.value.role;
+      this.collaborator.email = this.collaboratorForm.value.email;
+      this.collaborator.password = this.collaboratorForm.value.password;
+      this.address.cep = this.collaboratorForm.value.addressCep;
+      this.address.place = this.collaboratorForm.value.addressPlace;
+      this.address.number = this.collaboratorForm.value.addressNumber;
+      this.address.district = this.collaboratorForm.value.addressDistrict;
+      this.address.city = this.collaboratorForm.value.addressCity;
+      this.address.state = this.collaboratorForm.value.addressState;
+      this.collaborator.address = this.address;
 
-    this.collaboratorService.createCollaborator(collaborator).subscribe(
-      (newcollaborator) => {
-        this.collaborator = newcollaborator;
-      },
-      (error) => (this.error = error as any)
-    );
-    window.location.reload();
+      this.collaboratorService.createCollaborator(collaborator).subscribe(
+        (newcollaborator) => {
+          this.collaborator = newcollaborator;
+        },
+        (error) => (this.error = error as any)
+      );
+      window.location.reload();
+    }
   }
 }

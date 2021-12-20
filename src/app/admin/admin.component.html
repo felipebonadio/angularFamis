@@ -38,27 +38,22 @@
 <jw-modal id="updateTable">
   <div class="modal">
     <p>Alteração de número de mesas</p>
-    <br />
-    <label>Quantidade atual: 20</label>
-    <br />
-    <mat-form-field appearance="fill">
-      <mat-label>Novo número de mesas</mat-label>
-      <input matInput type="number" />
-    </mat-form-field>    
-    <div class="row">
-      <button
-        type="submit"
-        (click)="closeModal('updateTable')"
-        mat-stroked-button
-        color="primary"
-      >
-        Salvar
-      </button>
-      <button (click)="closeModal('updateTable')" mat-stroked-button
-        color="accent"      >
-        Cancelar
-      </button>
-    </div>
+    <label id="center">Quantidade atual: {{restaurant.consumer}}</label>
+    <br>
+    <form class="form" [formGroup]="consumerForm" (ngSubmit)="onUpdateConsumer()">
+      <mat-form-field appearance="fill">
+        <mat-label>Novo número de mesas</mat-label>
+        <input matInput formControlName="consumer" type="text" />
+      </mat-form-field>
+      <div class="row">
+        <button type="submit" (click)="closeModal('updateTable')" mat-stroked-button color="primary">
+          Salvar
+        </button>
+      </div>
+    </form>
+    <button (click)="closeModal('updateTable')" mat-stroked-button color="accent">
+      Cancelar
+    </button>
   </div>
 </jw-modal>
 
@@ -77,16 +72,10 @@
       <input matInput type="time" />
     </mat-form-field>
     <div class="row">
-      <button
-        type="submit"
-        (click)="closeModal('updateSchedule')"
-        mat-stroked-button
-        color="primary"
-      >
+      <button type="submit" (click)="closeModal('updateSchedule')" mat-stroked-button color="primary">
         Salvar
       </button>
-      <button (click)="closeModal('updateSchedule')" mat-stroked-button
-        color="accent"      >
+      <button (click)="closeModal('updateSchedule')" mat-stroked-button color="accent">
         Cancelar
       </button>
     </div>
