@@ -5,7 +5,7 @@ export interface Restaurant{
     name:string;
     cnpj:string;
     phone:string;
-    consumer:string;
+    consumer:number;
     openTime:string;
     closeTime:string;
     address:Address;

@@ -1,8 +1,5 @@
 <div class="container">
-    <button routerLink="/orderdetails" mat-stroked-button color="primary">Mesa 1</button>
-    <button routerLink="/orderdetails" mat-stroked-button color="primary">Mesa 1</button>
-    <button routerLink="/orderdetails" mat-stroked-button color="primary">Mesa 1</button>
-    <button routerLink="/orderdetails" mat-stroked-button color="primary">Mesa 1</button>
-    <button routerLink="/orderdetails" mat-stroked-button color="primary">Mesa 1</button>
-    <button routerLink="/orderdetails" mat-stroked-button color="primary">Mesa 1</button>
+    <div *ngFor="let um of [].constructor(restaurant.consumer); index as i">
+        <button>Mesa {{i}}</button>
+    </div>   
 </div>
