@@ -22,3 +22,34 @@
   width: 80px;
   margin-left: 50px;
 }
+
+.btn-sup {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto auto auto auto auto;
+}
+button {
+  width: 90%;
+  padding: 10px;
+  margin: 5px;
+}
+
+.container {
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  margin: 0 auto;
+  width: 75%;
+  height: 150px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  width: 50px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #cecece;
+}
