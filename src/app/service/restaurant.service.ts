@@ -6,7 +6,7 @@ import { Restaurant } from '../model/restaurant';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminService {
+export class RestaurantService {
 
   entityUrl = 'http://localhost:8080/restaurants';  
 
@@ -17,12 +17,7 @@ export class AdminService {
     return this.http.get<Restaurant[]>(this.entityUrl);
   }
 
-  updateRestaurantConsumer(restaurantId: string, restaurant: Restaurant): Observable<Restaurant> {
-    return this.http.put<Restaurant>(this.entityUrl + '/' + restaurantId, restaurant);
-  }
-
   getRestaurantById(restaurantId: String): Observable<Restaurant>{
     return this.http.get<Restaurant>(this.entityUrl + "/"+ restaurantId);
   }
-  
 }

@@ -21,7 +21,9 @@ import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { ProductComponent } from './product/product.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CollaboratorDetailsComponent } from './collaborator-details/collaborator-details.component';
+import { CollaboratorDetailsComponent } from './collaborator/collaborator-details/collaborator-details.component';
+import { CollaboratorSaveComponent } from './collaborator/collaborator-save/collaborator-save.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -38,6 +40,7 @@ import { CollaboratorDetailsComponent } from './collaborator-details/collaborato
     CollaboratorComponent,
     ProductComponent,
     CollaboratorDetailsComponent,
+    CollaboratorSaveComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { CollaboratorDetailsComponent } from './collaborator-details/collaborato
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

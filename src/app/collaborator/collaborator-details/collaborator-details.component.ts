@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CollaboratorService } from '../service/collaborator.service';
-import { ModalService } from '../service/modal.service';
-import { Collaborator } from '../model/collaborator';
+import { CollaboratorService } from '../../service/collaborator.service';
+import { ModalService } from '../../service/modal.service';
+import { Collaborator } from '../../model/collaborator';
 
 @Component({
   selector: 'app-collaborator-details',

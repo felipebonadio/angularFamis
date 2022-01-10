@@ -2,12 +2,14 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { CollaboratorDetailsComponent } from './collaborator-details/collaborator-details.component';
+import { CollaboratorDetailsComponent } from './collaborator/collaborator-details/collaborator-details.component';
+import { CollaboratorSaveComponent } from './collaborator/collaborator-save/collaborator-save.component';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { HomeComponent } from './home/home.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrderComponent } from './order/order.component';
 import { ProductComponent } from './product/product.component';
+
 
 const routes: Routes = [
   {
@@ -48,6 +50,10 @@ const routes: Routes = [
   },{
     path: 'collaborators/:id',
     component: CollaboratorDetailsComponent
+  },
+  {
+    path: 'save',
+    component: CollaboratorSaveComponent
   }
 ];
 
