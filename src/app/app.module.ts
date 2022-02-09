@@ -28,6 +28,7 @@ import { OrderComponent } from './order/order.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { ModalComponent } from './modal/modal.component';
 import { ProductComponent } from './product/product.component';
+import { ProductSaveComponent } from './product/product-save/product-save.component';
 
 registerLocaleData(localePt)
 
@@ -46,6 +47,7 @@ registerLocaleData(localePt)
     ProductComponent,
     CollaboratorDetailsComponent,
     CollaboratorSaveComponent,
+    ProductSaveComponent
   ],
   imports: [
     BrowserModule,

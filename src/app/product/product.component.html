@@ -1,56 +1,40 @@
 <div class="center">
-  <h2>Lista de produtos</h2>
-  </div>
-  <div class="center">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Tipo</th>
-          <th>Preço</th>         
-          <th>Opções</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Macarrão</td>
-          <td>Massa</td>        
-          <td>R$25.00</td>
-          <td>
-            <button color="primary">
-              <mat-icon>delete</mat-icon>
-            </button>
-            <button color="primary">
+  <button class="center" mat-icon-button [routerLink]="['/saveProduct']">
+    <mat-icon> save </mat-icon>
+    Adicionar novo produto
+  </button>
+</div>
+<div class="center">
+  <h2>Lista de Produtos</h2>
+</div>
+<div class="center">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Valor</th>
+        <th>Categoria</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of products">
+      <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.value}}</td>
+        <td>{{product.category}}</td>
+        <td>
+          <button color="primary">
+            <a [routerLink]="['/products', product.id]">
               <mat-icon>update</mat-icon>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>Filé de tilápia</td>
-          <td>Carne</td>          
-          <td>R$30.00</td>
-          <td>
-            <button color="primary">
-              <mat-icon>delete</mat-icon>
-            </button>
-            <button color="primary">
+            </a>
+          </button>
+          <button color="primary">
+            <a [routerLink]="['/products', product.id]">
               <mat-icon>update</mat-icon>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>Suco de laranja</td>
-          <td>Suco</td>        
-          <td>R$5.00</td>
-          <td>
-            <button color="primary">
-              <mat-icon>delete</mat-icon>
-            </button>
-            <button color="primary">
-              <mat-icon>update</mat-icon>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+            </a>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

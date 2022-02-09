@@ -8,6 +8,7 @@ import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { HomeComponent } from './home/home.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrderComponent } from './order/order.component';
+import { ProductSaveComponent } from './product/product-save/product-save.component';
 import { ProductComponent } from './product/product.component';
 
 
@@ -52,8 +53,12 @@ const routes: Routes = [
     component: CollaboratorDetailsComponent
   },
   {
-    path: 'save',
+    path: 'saveCollaborator',
     component: CollaboratorSaveComponent
+  },
+  {
+    path: 'saveProduct',
+    component: ProductSaveComponent
   }
 ];
 

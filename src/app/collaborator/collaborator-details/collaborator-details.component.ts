@@ -17,7 +17,6 @@ export class CollaboratorDetailsComponent implements OnInit {
   constructor(
     private collaboratorService: CollaboratorService,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder,
     private modalService: ModalService,
     private router: Router
   ) {
