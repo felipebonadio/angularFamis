@@ -9,17 +9,10 @@ button {
   background-color: #f6f6f6;
   margin: 0 auto;
   width: 75%;
-  height: 150px;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   justify-content: center;
   align-items: center;
-}
-
-.item {
-  width: 50px;
-  height: 30px;
-  border-radius: 10px;
-  background-color: #cecece;
 }

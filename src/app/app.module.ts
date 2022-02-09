@@ -7,13 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { CollaboratorDetailsComponent } from './collaborator/collaborator-details/collaborator-details.component';
