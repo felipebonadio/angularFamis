@@ -17,7 +17,6 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private route: ActivatedRoute,
     private modalService: ModalService,
     private router: Router,
     private formBuilder: FormBuilder

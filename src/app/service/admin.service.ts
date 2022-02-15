@@ -17,8 +17,8 @@ export class AdminService {
     return this.http.get<Restaurant[]>(this.entityUrl);
   }
 
-  updateRestaurantConsumer(restaurantId: string, restaurant: Restaurant): Observable<Restaurant> {
-    return this.http.put<Restaurant>(this.entityUrl + '/' + restaurantId, restaurant);
+  updateConsumerOnRestaurant(restaurant: Restaurant): Observable<Restaurant> {
+    return this.http.put<Restaurant>(this.entityUrl+ "/consumer" , restaurant);
   }
 
   getRestaurantById(restaurantId: String): Observable<Restaurant>{

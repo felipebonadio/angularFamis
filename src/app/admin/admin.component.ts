@@ -41,14 +41,15 @@ export class AdminComponent implements OnInit {
   });
 
   onUpdateConsumer() {   
-    if (this.consumerForm.value.consumer !== '') {
-      this.restaurant.consumer = this.consumerForm.value.consumer;
+    if (this.consumerForm.value.consumer !== '') {      
+      this.restaurant.consumer = this.consumerForm.value.consumer;     
       this.adminService
-        .updateRestaurantConsumer(this.restaurant.id, this.restaurant)
+        .updateConsumerOnRestaurant(this.restaurant)
         .subscribe(
           (newConsumer) => {
             this.restaurant = newConsumer;
-          },
+            console.warn(newConsumer)
+          },         
           (error) => (this.error = error as any)
         );
     }

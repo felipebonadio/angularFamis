@@ -15,24 +15,18 @@ import { CollaboratorService } from 'src/app/service/collaborator.service';
 
 export class CollaboratorSaveComponent implements OnInit {
   error: Error | undefined;
-  collaborator: Collaborator;
-  collaborators: Collaborator[];
-  address: Address;
-  restaurant : Restaurant;
-  selected : Restaurant;
+  collaborator: Collaborator = {} as Collaborator;;
+  collaborators: Collaborator[] =[];
+  address: Address = {} as Address;;
+  restaurant : Restaurant  = {} as Restaurant;;
+  selected : Restaurant = {} as Restaurant;
   
   constructor(
     private formBuilder: FormBuilder,
     private collaboratorService: CollaboratorService,
     private router: Router,
     private adminService: AdminService
-  ) {
-    this.collaborator = {} as Collaborator;
-    this.address = {} as Address;
-    this.collaborators = [];
-    this.restaurant = {} as Restaurant;
-    this.selected = {} as Restaurant;    
-  }
+  ) {  }
 
   ngOnInit(): void {
     this.adminService
