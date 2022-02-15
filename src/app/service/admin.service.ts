@@ -21,6 +21,10 @@ export class AdminService {
     return this.http.put<Restaurant>(this.entityUrl+ "/consumer" , restaurant);
   }
 
+  updateTimeOnRestaurant(restaurant: Restaurant): Observable<Restaurant>{
+    return this.http.put<Restaurant>(this.entityUrl + "/time", restaurant);
+  }
+
   getRestaurantById(restaurantId: String): Observable<Restaurant>{
     return this.http.get<Restaurant>(this.entityUrl + "/"+ restaurantId);
   }

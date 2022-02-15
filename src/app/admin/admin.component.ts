@@ -40,6 +40,11 @@ export class AdminComponent implements OnInit {
     consumer: '',
   });
 
+  restaurantFormTime = this.formBuilder.group({
+    openTime: '',
+    closeTime: ''
+  })
+
   onUpdateConsumer() {   
     if (this.consumerForm.value.consumer !== '') {      
       this.restaurant.consumer = this.consumerForm.value.consumer;     
@@ -49,6 +54,22 @@ export class AdminComponent implements OnInit {
           (newConsumer) => {
             this.restaurant = newConsumer;
             console.warn(newConsumer)
+          },         
+          (error) => (this.error = error as any)
+        );
+    }
+  }
+
+  onUpdateTime() {   
+    if (this.restaurantFormTime.value.openTime !== '') {      
+      this.restaurant.openTime = this.restaurantFormTime.value.openTime;     
+      this.restaurant.closeTime = this.restaurantFormTime.value.closeTime;
+      this.adminService
+        .updateTimeOnRestaurant(this.restaurant)
+        .subscribe(
+          (newTime) => {
+            this.restaurant = newTime;
+            console.warn(newTime)
           },         
           (error) => (this.error = error as any)
         );

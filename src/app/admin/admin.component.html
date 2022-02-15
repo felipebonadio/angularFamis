@@ -6,7 +6,7 @@
     <button routerLink="/collaborators" mat-stroked-button color="primary">
       Funcionários
     </button>
-    <button (click)="openModal('updateSchedule')" mat-stroked-button color="primary">
+    <button (click)="openModal('updateTime')" mat-stroked-button color="primary">
       Editar horário de funcionamento
     </button>
     <button routerLink="/products" mat-stroked-button color="primary">
@@ -37,25 +37,27 @@
   </div>
 </jw-modal>
 
-<jw-modal id="updateSchedule">
+<jw-modal id="updateTime">
   <div class="modal">
     <p>Alteração de Horário</p>
     <br />
-    <label>Horário atual: 18:00 - 24:00</label>
+    <label>Horário atual: {{this.restaurant.openTime}} - {{this.restaurant.closeTime}}</label>
     <br />
+    <form class="form" [formGroup]="restaurantFormTime" (ngSubmit)="onUpdateTime()">
     <mat-form-field appearance="fill">
       <mat-label>Novo horário de abertrura</mat-label>
-      <input matInput type="time" />
+      <input matInput formControlName="openTime" type="time" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Novo horário de encerramento</mat-label>
-      <input matInput type="time" />
+      <input matInput formControlName="closeTime" type="time" />
     </mat-form-field>
+  </form>
     <div class="row">
-      <button type="submit" (click)="closeModal('updateSchedule')" mat-stroked-button color="primary">
+      <button type="submit" (click)="closeModal('updateTime')" mat-stroked-button color="primary">
         Salvar
       </button>
-      <button (click)="closeModal('updateSchedule')" mat-stroked-button color="accent">
+      <button (click)="closeModal('updateTime')" mat-stroked-button color="accent">
         Cancelar
       </button>
     </div>
