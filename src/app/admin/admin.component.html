@@ -52,11 +52,13 @@
       <mat-label>Novo horário de encerramento</mat-label>
       <input matInput formControlName="closeTime" type="time" />
     </mat-form-field>
-  </form>
     <div class="row">
       <button type="submit" (click)="closeModal('updateTime')" mat-stroked-button color="primary">
         Salvar
       </button>
+    </div>
+  </form>
+    <div>
       <button (click)="closeModal('updateTime')" mat-stroked-button color="accent">
         Cancelar
       </button>
