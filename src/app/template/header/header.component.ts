@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Restaurant } from 'src/app/model/restaurant';
+import { Restaurante } from 'src/app/model/restaurante';
 import { HeaderService } from 'src/app/service/header.service';
 
 @Component({
@@ -9,10 +9,10 @@ import { HeaderService } from 'src/app/service/header.service';
 })
 export class HeaderComponent implements OnInit {
 
-  restaurant : Restaurant;
+  restaurant : Restaurante;
 
   constructor(private headerService:HeaderService) { 
-    this.restaurant = {} as Restaurant;
+    this.restaurant = {} as Restaurante;
   }
 
   ngOnInit(): void {

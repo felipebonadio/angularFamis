@@ -1,4 +1,4 @@
-export interface Consumer{
+export interface Mesa{
     id: string;
     number: number;
 }

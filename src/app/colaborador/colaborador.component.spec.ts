@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CollaboratorSaveComponent } from './collaborator-save.component';
+import { ColaboradorComponent } from './colaborador.component';
 
-describe('CollaboratorSaveComponent', () => {
-  let component: CollaboratorSaveComponent;
-  let fixture: ComponentFixture<CollaboratorSaveComponent>;
+describe('CollaboratorComponent', () => {
+  let component: ColaboradorComponent;
+  let fixture: ComponentFixture<ColaboradorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CollaboratorSaveComponent ]
+      declarations: [ ColaboradorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CollaboratorSaveComponent);
+    fixture = TestBed.createComponent(ColaboradorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

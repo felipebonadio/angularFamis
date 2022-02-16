@@ -1,65 +1,65 @@
 <div class="container">
   <div class="sub-container">
-    <button (click)="openModal('updateTable')" mat-stroked-button color="primary">
+    <button (click)="openModal('updateMesa')" mat-stroked-button color="primary">
       Editar quantidade de mesas
     </button>
-    <button routerLink="/collaborators" mat-stroked-button color="primary">
+    <button routerLink="/colaboradores" mat-stroked-button color="primary">
       Funcionários
     </button>
-    <button (click)="openModal('updateTime')" mat-stroked-button color="primary">
+    <button (click)="openModal('updateHorario')" mat-stroked-button color="primary">
       Editar horário de funcionamento
     </button>
-    <button routerLink="/products" mat-stroked-button color="primary">
+    <button routerLink="/produtos" mat-stroked-button color="primary">
       Editar cardápio
     </button>
   </div>
 </div>
 
-<jw-modal id="updateTable">
+<jw-modal id="updateMesa">
   <div class="modal">
     <p>Alteração de número de mesas</p>
-    <label id="center">Quantidade atual: {{restaurant.consumer}}</label>
+    <label id="center">Quantidade atual: {{restaurante.mesa}}</label>
     <br>
-    <form class="form" [formGroup]="consumerForm" (ngSubmit)="onUpdateConsumer()">
+    <form class="form" [formGroup]="mesaForm" (ngSubmit)="onUpdateMesa()">
       <mat-form-field appearance="fill">
         <mat-label>Novo número de mesas</mat-label>
-        <input matInput formControlName="consumer" type="text" />
+        <input matInput formControlName="mesa" type="text" />
       </mat-form-field>
       <div class="row">
-        <button type="submit" (click)="closeModal('updateTable')" mat-stroked-button color="primary">
+        <button type="submit" (click)="closeModal('updateMesa')" mat-stroked-button color="primary">
           Salvar
         </button>
       </div>
     </form>
-    <button (click)="closeModal('updateTable')" mat-stroked-button color="accent">
+    <button (click)="closeModal('updateMesa')" mat-stroked-button color="accent">
       Cancelar
     </button>
   </div>
 </jw-modal>
 
-<jw-modal id="updateTime">
+<jw-modal id="updateHorario">
   <div class="modal">
     <p>Alteração de Horário</p>
     <br />
-    <label>Horário atual: {{this.restaurant.openTime}} - {{this.restaurant.closeTime}}</label>
+    <label>Horário atual: {{this.restaurante.horarioAbertura}} - {{this.restaurante.horarioEncerramento}}</label>
     <br />
-    <form class="form" [formGroup]="restaurantFormTime" (ngSubmit)="onUpdateTime()">
+    <form class="form" [formGroup]="restauranteHorarioForm" (ngSubmit)="onUpdateHorario()">
     <mat-form-field appearance="fill">
       <mat-label>Novo horário de abertrura</mat-label>
-      <input matInput formControlName="openTime" type="time" />
+      <input matInput formControlName="horarioAbertura" type="time" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Novo horário de encerramento</mat-label>
-      <input matInput formControlName="closeTime" type="time" />
+      <input matInput formControlName="horarioEncerramento" type="time" />
     </mat-form-field>
     <div class="row">
-      <button type="submit" (click)="closeModal('updateTime')" mat-stroked-button color="primary">
+      <button type="submit" (click)="closeModal('updateHorario')" mat-stroked-button color="primary">
         Salvar
       </button>
     </div>
   </form>
     <div>
-      <button (click)="closeModal('updateTime')" mat-stroked-button color="accent">
+      <button (click)="closeModal('updateHorario')" mat-stroked-button color="accent">
         Cancelar
       </button>
     </div>

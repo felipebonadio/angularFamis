@@ -3,31 +3,31 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CollaboratorService } from '../../service/collaborator.service';
 import { ModalService } from '../../service/modal.service';
-import { Collaborator } from '../../model/collaborator';
+import { Colaborador } from '../../model/colaborador';
 
 @Component({
   selector: 'app-collaborator-details',
-  templateUrl: './collaborator-details.component.html',
-  styleUrls: ['./collaborator-details.component.css'],
+  templateUrl: './colaborador-details.component.html',
+  styleUrls: ['./colaborador-details.component.css'],
 })
-export class CollaboratorDetailsComponent implements OnInit {
+export class ColaboradorDetailsComponent implements OnInit {
   error: Error | undefined;
-  collaborator: Collaborator;
+  colaborador: Colaborador;
 
   constructor(
-    private collaboratorService: CollaboratorService,
+    private colaboradorService: CollaboratorService,
     private route: ActivatedRoute,
     private modalService: ModalService,
     private router: Router
   ) {
-    this.collaborator = {} as Collaborator;
+    this.colaborador = {} as Colaborador;
   }
 
   ngOnInit(): void {
     const paramId = String(this.route.snapshot.paramMap.get('id'));
-    this.collaboratorService
+    this.colaboradorService
       .getCollaboratorById(paramId)
-      .subscribe((collaborator) => (this.collaborator = collaborator));
+      .subscribe((collaborator) => (this.colaborador = collaborator));
   }
 
   openModal(id: string) {
@@ -38,10 +38,10 @@ export class CollaboratorDetailsComponent implements OnInit {
     this.modalService.close(id);
   }
 
-  onDelete(collaborator: Collaborator) {
-    this.collaboratorService.deleteCollaborator(collaborator.id).subscribe(
+  onDelete(collaborator: Colaborador) {
+    this.colaboradorService.deleteCollaborator(collaborator.id).subscribe(
       (response) => {
-        this.collaborator = {} as Collaborator;
+        this.colaborador = {} as Colaborador;
         this.closeModal('delete'), this.openModal('deleteOk');
       },
       (error) => (this.error = error as any)

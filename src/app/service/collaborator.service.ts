@@ -1,34 +1,33 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Collaborator } from '../model/collaborator';
-import { Restaurant } from '../model/restaurant';
+import { Colaborador } from '../model/colaborador';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CollaboratorService {
-  entityUrl = 'http://localhost:8080/collaborators';  
+  entityUrl = 'http://localhost:8080/colaboradores';  
 
   constructor(private http: HttpClient) {    
   }
 
-  getCollaborators(): Observable<Collaborator[]> {
-    return this.http.get<Collaborator[]>(this.entityUrl);
+  getCollaborators(): Observable<Colaborador[]> {
+    return this.http.get<Colaborador[]>(this.entityUrl);
   }
 
-  getCollaboratorById(id: string): Observable<Collaborator> {
-    return this.http.get<Collaborator>(this.entityUrl + '/' + id);
+  getCollaboratorById(id: string): Observable<Colaborador> {
+    return this.http.get<Colaborador>(this.entityUrl + '/' + id);
   }
 
-  createCollaborator(Collaborator: Collaborator): Observable<Collaborator> {
-    return this.http.post<Collaborator>(this.entityUrl, Collaborator);
+  createCollaborator(colaborador: Colaborador): Observable<Colaborador> {
+    return this.http.post<Colaborador>(this.entityUrl, colaborador);
   }
 
-  deleteCollaborator(collaboratorId: string): Observable<string> {
-    return this.http.delete<string>(this.entityUrl + '/' + collaboratorId);
+  deleteCollaborator(colaboradorId: string): Observable<string> {
+    return this.http.delete<string>(this.entityUrl + '/' + colaboradorId);
   }
-  updateCollaborator(collaboratorId: string, Collaborator: Collaborator): Observable<Collaborator> {
-    return this.http.put<Collaborator>(this.entityUrl + '/' + collaboratorId, Collaborator);
+  updateCollaborator(colaboradorId: string, colaborador: Colaborador): Observable<Colaborador> {
+    return this.http.put<Colaborador>(this.entityUrl + '/' + colaboradorId, colaborador);
   }
 }

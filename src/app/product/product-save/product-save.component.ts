@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Products } from 'src/app/model/products';
+import { Produto } from 'src/app/model/produto';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { ProductService } from 'src/app/service/product.service';
 export class ProductSaveComponent implements OnInit {
 
   error: Error | undefined;
-  product: Products = {} as Products;
+  product: Produto = {} as Produto;
 
   constructor(private formBuilder: FormBuilder,
               private productService: ProductService, 
@@ -27,11 +27,11 @@ export class ProductSaveComponent implements OnInit {
     category: '',
   });
 
-  onSave(product: Products) {
+  onSave(product: Produto) {
     if (this.productForm.value.name !== '') {
-      this.product.name = this.productForm.value.name;
-      this.product.value = this.productForm.value.value;
-      this.product.category = this.productForm.value.category;     
+      this.product.nome = this.productForm.value.name;
+      this.product.valor = this.productForm.value.value;
+      this.product.categoria = this.productForm.value.category;     
      
       this.productService.createProduct(product).subscribe(newProduct =>{
         this.product = newProduct;

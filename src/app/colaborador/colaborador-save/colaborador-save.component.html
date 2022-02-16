@@ -1,19 +1,19 @@
 <div class="container">
-  <form (ngSubmit)="onSave(collaborator)" [formGroup]="collaboratorForm">
+  <form (ngSubmit)="onSave(colaborador)" [formGroup]="colaboradorForm">
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Nome</mat-label>
-        <input matInput formControlName="name" type="text" />
+        <input matInput formControlName="nome" type="text" />
       </mat-form-field>
    
     <mat-form-field appearance="fill">
       <mat-label>Sobrenome</mat-label>
-      <input matInput formControlName="lastName" type="text" />
+      <input matInput formControlName="sobrenome" type="text" />
     </mat-form-field>
  
     <mat-form-field appearance="fill">
       <mat-label>Telefone</mat-label>
-      <input matInput formControlName="phone" type="text" />
+      <input matInput formControlName="telefone" type="text" />
     </mat-form-field>
   
     <mat-form-field appearance="fill">
@@ -24,7 +24,7 @@
   <div>
     <mat-form-field appearance="fill">
       <mat-label>Cargo</mat-label>
-      <input matInput formControlName="role" type="text" />
+      <input matInput formControlName="funcao" type="text" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -34,46 +34,46 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Senha</mat-label>
-      <input matInput formControlName="password" type="text" />
+      <input matInput formControlName="senha" type="text" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>CEP</mat-label>
-      <input matInput formControlName="addressCep" type="text" />
+      <input matInput formControlName="enderecoCep" type="text" />
     </mat-form-field>
   </div>
   <div>
     <mat-form-field appearance="fill">
       <mat-label>Rua</mat-label>
-      <input matInput formControlName="addressPlace" type="text" />
+      <input matInput formControlName="enderecoLogradouro" type="text" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Número</mat-label>
-      <input matInput formControlName="addressNumber" type="text" />
+      <input matInput formControlName="enderecoNumero" type="text" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Bairro</mat-label>
-      <input matInput formControlName="addressDistrict" type="text" />
+      <input matInput formControlName="enderecoBairro" type="text" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Cidade</mat-label>
-      <input matInput formControlName="addressCity" type="text" />
+      <input matInput formControlName="enderecoLocalidade" type="text" />
     </mat-form-field>
   </div>
   <div>
     <mat-form-field appearance="fill">
       <mat-label>Estado</mat-label>
-      <input matInput formControlName="addressState" type="text" />
+      <input matInput formControlName="enderecoUf" type="text" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Restaurante</mat-label>
       <mat-select [(value)]="selected">
-        <mat-option *ngFor="let restaurants of [].constructor(restaurant.name); index as i" value="{{restaurant.name}}">
-          {{restaurant.name}}
+        <mat-option *ngFor="let restaurantes of [].constructor(restaurante.nome); index as i" value="{{restaurante.nome}}">
+          {{restaurante.nome}}
         </mat-option>
       </mat-select>
     </mat-form-field>

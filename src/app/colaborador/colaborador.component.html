@@ -1,5 +1,5 @@
 <div class="center">
-  <button class="center" mat-icon-button [routerLink]="['/saveCollaborator']">
+  <button class="center" mat-icon-button [routerLink]="['/colaborador-save']">
     <mat-icon> save </mat-icon>
     Adicionar novo colaborador
   </button>
@@ -17,14 +17,14 @@
         <th>Detalhes</th>
       </tr>
     </thead>
-    <tbody *ngFor="let collaborator of collaborators">
+    <tbody *ngFor="let colaborador of colaboradores">
       <tr>
-        <td>{{collaborator.name + " " + collaborator.lastName}}</td>
-        <td>{{collaborator.phone}}</td>
-        <td>{{collaborator.role}}</td>
+        <td>{{colaborador.nome + " " + colaborador.sobrenome}}</td>
+        <td>{{colaborador.telefone}}</td>
+        <td>{{colaborador.funcao}}</td>
         <td>
           <button color="primary">
-            <a [routerLink]="['/collaborators', collaborator.id]">
+            <a [routerLink]="['/colaboradores', colaborador.id]">
               <mat-icon>update</mat-icon>
             </a>
           </button>

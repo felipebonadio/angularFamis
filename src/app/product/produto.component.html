@@ -1,5 +1,5 @@
 <div class="center">
-  <button class="center" mat-icon-button [routerLink]="['/saveProduct']">
+  <button class="center" mat-icon-button [routerLink]="['/produto-save']">
     <mat-icon> save </mat-icon>
     Adicionar novo produto
   </button>
@@ -17,19 +17,19 @@
         <th>Opções</th>
       </tr>
     </thead>
-    <tbody *ngFor="let product of products">
+    <tbody *ngFor="let produto of produtos">
       <tr>
-        <td>{{product.name}}</td>
-        <td>{{product.value}}</td>
-        <td>{{product.category}}</td>
+        <td>{{produto.nome}}</td>
+        <td>{{produto.valor}}</td>
+        <td>{{produto.categoria}}</td>
         <td>
           <button color="primary">
-            <a [routerLink]="['/products', product.id]">
+            <a [routerLink]="['/produtos', produto.id]">
               <mat-icon>update</mat-icon>
             </a>
           </button>
           <button color="primary">
-            <a [routerLink]="['/products', product.id]">
+            <a [routerLink]="['/produtos', produto.id]">
               <mat-icon>delete</mat-icon>
             </a>
           </button>

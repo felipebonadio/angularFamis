@@ -2,14 +2,14 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { CollaboratorDetailsComponent } from './collaborator/collaborator-details/collaborator-details.component';
-import { CollaboratorSaveComponent } from './collaborator/collaborator-save/collaborator-save.component';
-import { CollaboratorComponent } from './collaborator/collaborator.component';
+import { ColaboradorDetailsComponent } from './colaborador/colaborador-details/colaborador-details.component';
+import { CollaboratorSaveComponent } from './colaborador/colaborador-save/colaborador-save.component';
+import { ColaboradorComponent } from './colaborador/colaborador.component';
 import { HomeComponent } from './home/home.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrderComponent } from './order/order.component';
 import { ProductSaveComponent } from './product/product-save/product-save.component';
-import { ProductComponent } from './product/product.component';
+import { ProductComponent } from './product/produto.component';
 
 
 const routes: Routes = [
@@ -22,11 +22,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'orders',
+    path: 'pedidos',
     component: OrderComponent
   },
   {
-    path: 'orders/:id',
+    path: 'pedidos/:id',
     component: OrderDetailsComponent
   },
   {
@@ -38,26 +38,26 @@ const routes: Routes = [
     component: AdminComponent
   },
   {
-    path: 'orderdetails',
+    path: 'pedidos-detalhes',
     component: OrderDetailsComponent
   },
   {
-    path: 'collaborators',
-    component: CollaboratorComponent
+    path: 'colaboradores',
+    component: ColaboradorComponent
   },
   {
-    path: 'products',
+    path: 'produtos',
     component: ProductComponent
   },{
-    path: 'collaborators/:id',
-    component: CollaboratorDetailsComponent
+    path: 'colaboradores/:id',
+    component: ColaboradorDetailsComponent
   },
   {
-    path: 'saveCollaborator',
+    path: 'colaborador-save',
     component: CollaboratorSaveComponent
   },
   {
-    path: 'saveProduct',
+    path: 'produto-save',
     component: ProductSaveComponent
   }
 ];

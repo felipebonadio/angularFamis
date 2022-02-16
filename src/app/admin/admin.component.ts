@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Restaurant } from '../model/restaurant';
+import { Restaurante } from '../model/restaurante';
 import { AdminService } from '../service/admin.service';
 import { ModalService } from '../service/modal.service';
 
@@ -12,20 +12,20 @@ import { ModalService } from '../service/modal.service';
 export class AdminComponent implements OnInit {
   error: Error | undefined;
 
-  restaurant: Restaurant;
+  restaurante: Restaurante;
 
   constructor(
     private modalService: ModalService,
     private adminService: AdminService,
     private formBuilder: FormBuilder
   ) {
-    this.restaurant = {} as Restaurant;
+    this.restaurante = {} as Restaurante;
   }
 
   ngOnInit(): void {
     this.adminService
       .getRestaurants()
-      .subscribe((restaurant) => (this.restaurant = restaurant[0]));
+      .subscribe((restaurant) => (this.restaurante = restaurant[0]));
   }
 
   openModal(id: string) {
@@ -36,23 +36,23 @@ export class AdminComponent implements OnInit {
     this.modalService.close(id);
   }
 
-  consumerForm = this.formBuilder.group({
-    consumer: '',
+  mesaForm = this.formBuilder.group({
+    mesa: '',
   });
 
-  restaurantFormTime = this.formBuilder.group({
-    openTime: '',
-    closeTime: ''
+  restauranteHorarioForm = this.formBuilder.group({
+    horarioAbertura: '',
+    horarioEncerramento: ''
   })
 
-  onUpdateConsumer() {   
-    if (this.consumerForm.value.consumer !== '') {      
-      this.restaurant.consumer = this.consumerForm.value.consumer;     
+  onUpdateMesa() {   
+    if (this.mesaForm.value.consumer !== '') {      
+      this.restaurante.mesa = this.mesaForm.value.mesa;     
       this.adminService
-        .updateConsumerOnRestaurant(this.restaurant)
+        .updateConsumerOnRestaurant(this.restaurante)
         .subscribe(
           (newConsumer) => {
-            this.restaurant = newConsumer;
+            this.restaurante = newConsumer;
             console.warn(newConsumer)
           },         
           (error) => (this.error = error as any)
@@ -60,15 +60,15 @@ export class AdminComponent implements OnInit {
     }
   }
 
-  onUpdateTime() {   
-    if (this.restaurantFormTime.value.openTime !== '') {      
-      this.restaurant.openTime = this.restaurantFormTime.value.openTime;     
-      this.restaurant.closeTime = this.restaurantFormTime.value.closeTime;
+  onUpdateHorario() {   
+    if (this.restauranteHorarioForm.value.openTime !== '') {      
+      this.restaurante.horarioAbertura = this.restauranteHorarioForm.value.horarioAbertura;     
+      this.restaurante.horarioEncerramento = this.restauranteHorarioForm.value.horarioEncerramento;
       this.adminService
-        .updateTimeOnRestaurant(this.restaurant)
+        .updateTimeOnRestaurant(this.restaurante)
         .subscribe(
           (newTime) => {
-            this.restaurant = newTime;
+            this.restaurante = newTime;
             console.warn(newTime)
           },         
           (error) => (this.error = error as any)

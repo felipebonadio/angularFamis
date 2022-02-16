@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Restaurant } from '../model/restaurant';
+import { Restaurante } from '../model/restaurante';
 import { AdminService } from '../service/admin.service';
 
 @Component({
@@ -8,15 +8,15 @@ import { AdminService } from '../service/admin.service';
   styleUrls: ['./order.component.css'],
 })
 export class OrderComponent implements OnInit {
-  restaurant: Restaurant;
+  restaurante: Restaurante;
 
   constructor(private adminService: AdminService) {
-    this.restaurant = {} as Restaurant;
+    this.restaurante = {} as Restaurante;
   }
 
   ngOnInit(): void {
     this.adminService
       .getRestaurants()
-      .subscribe((restaurant) => (this.restaurant = restaurant[0]));
+      .subscribe((restaurant) => (this.restaurante = restaurant[0]));
   }
 }
