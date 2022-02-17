@@ -4,10 +4,11 @@ import { AdminService } from '../service/admin.service';
 
 @Component({
   selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.css'],
+  templateUrl: './pedido.component.html',
+  styleUrls: ['./pedido.component.css'],
 })
-export class OrderComponent implements OnInit {
+export class PedidoComponent implements OnInit {
+  
   restaurante: Restaurante;
 
   constructor(private adminService: AdminService) {

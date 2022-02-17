@@ -17,6 +17,6 @@ export class ColaboradorComponent implements OnInit {
   ngOnInit(): void {
     this.collaboratorService
       .getCollaborators()
-      .subscribe((collaborators) => (this.colaboradores = collaborators));
+      .subscribe((colaboradores) => (this.colaboradores = colaboradores));
   }
 }

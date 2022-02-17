@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Produto } from '../model/produto';
 import { ModalService } from '../service/modal.service';
 import { ProductService } from '../service/product.service';
@@ -10,7 +10,7 @@ import { ProductService } from '../service/product.service';
   templateUrl: './produto.component.html',
   styleUrls: ['./produto.component.css'],
 })
-export class ProductComponent implements OnInit {
+export class ProdutoComponent implements OnInit {
   error: Error | undefined;
   produtos: Produto[] = [];
   produto: Produto = {} as Produto;

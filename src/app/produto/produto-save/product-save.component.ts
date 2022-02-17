@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/service/product.service';
   templateUrl: './product-save.component.html',
   styleUrls: ['./product-save.component.css']
 })
-export class ProductSaveComponent implements OnInit {
+export class ProdutoSaveComponent implements OnInit {
 
   error: Error | undefined;
   product: Produto = {} as Produto;

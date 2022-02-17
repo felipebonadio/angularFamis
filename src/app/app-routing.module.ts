@@ -1,20 +1,20 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { CaixaComponent } from './caixa/caixa.component';
 import { ColaboradorDetailsComponent } from './colaborador/colaborador-details/colaborador-details.component';
-import { CollaboratorSaveComponent } from './colaborador/colaborador-save/colaborador-save.component';
+import { ColaboradorSaveComponent } from './colaborador/colaborador-save/colaborador-save.component';
 import { ColaboradorComponent } from './colaborador/colaborador.component';
 import { HomeComponent } from './home/home.component';
-import { OrderDetailsComponent } from './order-details/order-details.component';
-import { OrderComponent } from './order/order.component';
-import { ProductSaveComponent } from './product/product-save/product-save.component';
-import { ProductComponent } from './product/produto.component';
+import { PedidoDetailsComponent } from './pedido/pedido-details/pedido-details.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { ProdutoSaveComponent } from './produto/produto-save/product-save.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 
 const routes: Routes = [
   {
-    path: '',
+    path: '**',
     component: HomeComponent
   },
   {
@@ -23,15 +23,15 @@ const routes: Routes = [
   },
   {
     path: 'pedidos',
-    component: OrderComponent
+    component: PedidoComponent
   },
   {
     path: 'pedidos/:id',
-    component: OrderDetailsComponent
+    component: PedidoDetailsComponent
   },
   {
     path: 'checkouts',
-    component: CheckoutComponent
+    component: CaixaComponent
   },
   {
     path: 'admin',
@@ -39,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: 'pedidos-detalhes',
-    component: OrderDetailsComponent
+    component: PedidoDetailsComponent
   },
   {
     path: 'colaboradores',
@@ -47,18 +47,18 @@ const routes: Routes = [
   },
   {
     path: 'produtos',
-    component: ProductComponent
+    component: ProdutoComponent
   },{
     path: 'colaboradores/:id',
     component: ColaboradorDetailsComponent
   },
   {
     path: 'colaborador-save',
-    component: CollaboratorSaveComponent
+    component: ColaboradorSaveComponent
   },
   {
     path: 'produto-save',
-    component: ProductSaveComponent
+    component: ProdutoSaveComponent
   }
 ];
 

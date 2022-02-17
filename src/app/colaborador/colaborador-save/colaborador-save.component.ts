@@ -13,7 +13,7 @@ import { CollaboratorService } from 'src/app/service/collaborator.service';
   styleUrls: ['./colaborador-save.component.css']
 })
 
-export class CollaboratorSaveComponent implements OnInit {
+export class ColaboradorSaveComponent implements OnInit {
   error: Error | undefined;
   colaborador: Colaborador = {} as Colaborador;;
   colaboradores: Colaborador[] =[];

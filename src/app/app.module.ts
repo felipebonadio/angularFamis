@@ -17,18 +17,18 @@ import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { ColaboradorDetailsComponent } from './colaborador/colaborador-details/colaborador-details.component';
-import { CollaboratorSaveComponent } from './colaborador/colaborador-save/colaborador-save.component';
+import { ColaboradorSaveComponent } from './colaborador/colaborador-save/colaborador-save.component';
 import { ColaboradorComponent } from './colaborador/colaborador.component';
 import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { CaixaComponent } from './caixa/caixa.component';
 import { AdminComponent } from './admin/admin.component';
-import { OrderComponent } from './order/order.component';
-import { OrderDetailsComponent } from './order-details/order-details.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { PedidoDetailsComponent } from './pedido/pedido-details/pedido-details.component';
 import { ModalComponent } from './modal/modal.component';
-import { ProductComponent } from './product/produto.component';
-import { ProductSaveComponent } from './product/product-save/product-save.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoSaveComponent } from './produto/produto-save/product-save.component';
 
 registerLocaleData(localePt)
 
@@ -36,18 +36,18 @@ registerLocaleData(localePt)
   declarations: [
     AppComponent,
     AdminComponent,
-    OrderComponent,
-    OrderDetailsComponent,
-    CheckoutComponent,
+    PedidoComponent,
+    PedidoDetailsComponent,
+    CaixaComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
     ModalComponent,
     ColaboradorComponent,
-    ProductComponent,
+    ProdutoComponent,
     ColaboradorDetailsComponent,
-    CollaboratorSaveComponent,
-    ProductSaveComponent
+    ColaboradorSaveComponent,
+    ProdutoSaveComponent
   ],
   imports: [
     BrowserModule,
