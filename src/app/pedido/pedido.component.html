@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngFor="let mesa of [].constructor(restaurante.mesa); index as i">
-        <button>Mesa {{i +1 }}</button>
+    <div *ngFor="let mesa of [].constructor(restaurante.quantidadeMesa); index as i">
+        <button routerLink="/pedidos-detalhes"><mat-icon>table_restaurant</mat-icon>Mesa {{i +1 }}</button>
     </div>   
 </div>

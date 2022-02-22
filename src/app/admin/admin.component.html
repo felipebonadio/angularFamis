@@ -18,12 +18,12 @@
 <jw-modal id="updateMesa">
   <div class="modal">
     <p>Alteração de número de mesas</p>
-    <label id="center">Quantidade atual: {{restaurante.mesa}}</label>
+    <label id="center">Quantidade atual: {{restaurante.quantidadeMesa}}</label>
     <br>
     <form class="form" [formGroup]="mesaForm" (ngSubmit)="onUpdateMesa()">
       <mat-form-field appearance="fill">
         <mat-label>Novo número de mesas</mat-label>
-        <input matInput formControlName="mesa" type="text" />
+        <input matInput formControlName="quantidadeMesa" type="text" />
       </mat-form-field>
       <div class="row">
         <button type="submit" (click)="closeModal('updateMesa')" mat-stroked-button color="primary">

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Endereco } from 'src/app/model/endereco';
 import { Colaborador } from 'src/app/model/colaborador';
 import { Restaurante } from 'src/app/model/restaurante';
 import { AdminService } from 'src/app/service/admin.service';
@@ -17,7 +16,6 @@ export class ColaboradorSaveComponent implements OnInit {
   error: Error | undefined;
   colaborador: Colaborador = {} as Colaborador;;
   colaboradores: Colaborador[] =[];
-  endereco: Endereco = {} as Endereco;;
   restaurante : Restaurante  = {} as Restaurante;;
   selected : Restaurante = {} as Restaurante;
   
@@ -39,15 +37,7 @@ export class ColaboradorSaveComponent implements OnInit {
     sobrenome: '',
     telefone: '',
     cpf: '',
-    funcao: '',
-    email: '',
-    senha: '',
-    enderecoCep: '',
-    enderecoLogradouro: '',
-    enderecoNumero: '',
-    enderecoBairro: '',
-    enderecoLocalidade: '',
-    enderecoUf: '',
+    funcao: '' 
   });
 
   onSave(collaborator: Colaborador) {
@@ -56,19 +46,7 @@ export class ColaboradorSaveComponent implements OnInit {
       this.colaborador.sobrenome = this.colaboradorForm.value.sobrenome;
       this.colaborador.telefone = this.colaboradorForm.value.telefone;
       this.colaborador.cpf = this.colaboradorForm.value.cpf;
-      this.colaborador.funcao = this.colaboradorForm.value.funcao;
-      this.colaborador.email = this.colaboradorForm.value.email;
-      this.colaborador.senha = this.colaboradorForm.value.senha;
-
-      this.endereco.cep = this.colaboradorForm.value.enderecoCep;
-      this.endereco.logradouro = this.colaboradorForm.value.enderecoLogradouro;
-      this.endereco.numero = this.colaboradorForm.value.enderecoNumero;
-      this.endereco.bairro = this.colaboradorForm.value.enderecoBairro;
-      this.endereco.localidade = this.colaboradorForm.value.enderecoLocalidade;
-      this.endereco.uf = this.colaboradorForm.value.enderecoUf;    
-      
-
-      this.colaborador.endereco = this.endereco;
+      this.colaborador.funcao = this.colaboradorForm.value.funcao;    
       this.colaborador.restaurante = this.restaurante;     
 
       this.collaboratorService.createCollaborator(collaborator).subscribe(

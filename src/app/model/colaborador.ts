@@ -1,4 +1,3 @@
-import { Endereco } from './endereco';
 import { Restaurante } from './restaurante';
 
 export interface Colaborador {
@@ -6,10 +5,7 @@ export interface Colaborador {
   nome: string;
   sobrenome: string;
   telefone: string;
-  cpf: string;
-  email: string;
-  senha: string;
-  endereco: Endereco;
+  cpf: string; 
   funcao: string;
   restaurante: Restaurante;
 }

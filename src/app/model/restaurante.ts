@@ -1,12 +1,9 @@
-import { Endereco } from "./endereco";
-
 export interface Restaurante{
     id:string;
     nome:string;
     cnpj:string;
     telefone:string;
-    mesa:number;
+    quantidadeMesa:number;
     horarioAbertura:string;
     horarioEncerramento:string;
-    endereco:Endereco;
 }

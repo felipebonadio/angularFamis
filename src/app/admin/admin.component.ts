@@ -37,7 +37,7 @@ export class AdminComponent implements OnInit {
   }
 
   mesaForm = this.formBuilder.group({
-    mesa: '',
+    quantidadeMesa: '',
   });
 
   restauranteHorarioForm = this.formBuilder.group({
@@ -47,7 +47,7 @@ export class AdminComponent implements OnInit {
 
   onUpdateMesa() {   
     if (this.mesaForm.value.consumer !== '') {      
-      this.restaurante.mesa = this.mesaForm.value.mesa;     
+      this.restaurante.quantidadeMesa = this.mesaForm.value.quantidadeMesa;     
       this.adminService
         .updateConsumerOnRestaurant(this.restaurante)
         .subscribe(

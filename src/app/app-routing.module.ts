@@ -13,10 +13,7 @@ import { ProdutoComponent } from './produto/produto.component';
 
 
 const routes: Routes = [
-  {
-    path: '**',
-    component: HomeComponent
-  },
+
   {
     path: 'home',
     component: HomeComponent
@@ -30,7 +27,7 @@ const routes: Routes = [
     component: PedidoDetailsComponent
   },
   {
-    path: 'checkouts',
+    path: 'caixa',
     component: CaixaComponent
   },
   {
