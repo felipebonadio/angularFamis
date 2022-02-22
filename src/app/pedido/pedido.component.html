@@ -1,5 +1,7 @@
 <div class="container">
     <div *ngFor="let mesa of [].constructor(restaurante.quantidadeMesa); index as i">
-        <button routerLink="/pedidos-detalhes"><mat-icon>table_restaurant</mat-icon>Mesa {{i +1 }}</button>
+        <button routerLink="/pedidos-detalhes" (onClick)="abrirMesa(i)"><mat-icon>table_restaurant</mat-icon>
+            <div> {{i +1 }}</div>
+        </button>
     </div>   
 </div>

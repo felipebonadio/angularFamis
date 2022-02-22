@@ -6,7 +6,7 @@ import { Restaurante } from '../model/restaurante';
 @Injectable({
   providedIn: 'root'
 })
-export class RestaurantService {
+export class RestauranteService {
 
   entityUrl = 'http://localhost:8080/restaurantes';  
 

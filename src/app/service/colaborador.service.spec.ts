@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CollaboratorService } from './collaborator.service';
+import { ColaboradorService } from './colaborador.service';
 
 describe('CollaboratorService', () => {
-  let service: CollaboratorService;
+  let service: ColaboradorService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CollaboratorService);
+    service = TestBed.inject(ColaboradorService);
   });
 
   it('should be created', () => {

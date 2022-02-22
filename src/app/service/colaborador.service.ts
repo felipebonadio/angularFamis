@@ -6,7 +6,7 @@ import { Colaborador } from '../model/colaborador';
 @Injectable({
   providedIn: 'root'
 })
-export class CollaboratorService {
+export class ColaboradorService {
   entityUrl = 'http://localhost:8080/colaboradores';  
 
   constructor(private http: HttpClient) {    

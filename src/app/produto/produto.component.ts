@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Produto } from '../model/produto';
 import { ModalService } from '../service/modal.service';
-import { ProductService } from '../service/product.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-product',
@@ -16,7 +16,7 @@ export class ProdutoComponent implements OnInit {
   produto: Produto = {} as Produto;
 
   constructor(
-    private produtoService: ProductService,
+    private produtoService: ProdutoService,
     private modalService: ModalService,
     private router: Router,
     private formBuilder: FormBuilder

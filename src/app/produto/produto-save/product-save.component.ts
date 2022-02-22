@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Produto } from 'src/app/model/produto';
-import { ProductService } from 'src/app/service/product.service';
+import { ProdutoService } from 'src/app/service/produto.service';
 
 @Component({
   selector: 'app-product-save',
@@ -15,7 +15,7 @@ export class ProdutoSaveComponent implements OnInit {
   product: Produto = {} as Produto;
 
   constructor(private formBuilder: FormBuilder,
-              private productService: ProductService, 
+              private productService: ProdutoService, 
               private router: Router) { }
 
   ngOnInit(): void {

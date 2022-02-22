@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Colaborador } from '../model/colaborador';
-import { CollaboratorService } from '../service/collaborator.service';
+import { ColaboradorService } from '../service/colaborador.service';
 import { Restaurante } from '../model/restaurante';
 
 @Component({
@@ -12,7 +12,7 @@ export class ColaboradorComponent implements OnInit {
   colaboradores: Colaborador[] = [];
   restaurante: Restaurante = {} as Restaurante;
 
-  constructor(private collaboratorService: CollaboratorService) {}
+  constructor(private collaboratorService: ColaboradorService) {}
 
   ngOnInit(): void {
     this.collaboratorService

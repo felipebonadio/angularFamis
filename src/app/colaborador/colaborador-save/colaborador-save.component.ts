@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Colaborador } from 'src/app/model/colaborador';
 import { Restaurante } from 'src/app/model/restaurante';
 import { AdminService } from 'src/app/service/admin.service';
-import { CollaboratorService } from 'src/app/service/collaborator.service';
+import { ColaboradorService } from 'src/app/service/colaborador.service';
 
 @Component({
   selector: 'app-collaborator-save',
@@ -21,7 +21,7 @@ export class ColaboradorSaveComponent implements OnInit {
   
   constructor(
     private formBuilder: FormBuilder,
-    private collaboratorService: CollaboratorService,
+    private collaboratorService: ColaboradorService,
     private router: Router,
     private adminService: AdminService
   ) {  }

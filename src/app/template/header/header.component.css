@@ -10,13 +10,6 @@
   color: #fff;
 }
 
-.linha {
-  width: 100%;
-  grid-template-rows: auto;
-  color: black;  
-  text-align: center;  
-}
-
 .logo {
   height: 80px;
   width: 80px;
@@ -24,12 +17,14 @@
 }
 
 .btn-sup {
-  display: grid;
+  display: flex;
   justify-items: center;
-  grid-template-columns: auto auto auto auto auto;
+  flex-direction: row;
+  margin: 0 10px;
 }
+
 button {
-  width: 90%;
+  width: 80%;
   padding: 10px;
   margin: 5px;
 }

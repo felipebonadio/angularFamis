@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CollaboratorService } from '../../service/collaborator.service';
+import { ColaboradorService } from '../../service/colaborador.service';
 import { ModalService } from '../../service/modal.service';
 import { Colaborador } from '../../model/colaborador';
 
@@ -15,7 +15,7 @@ export class ColaboradorDetailsComponent implements OnInit {
   colaborador: Colaborador;
 
   constructor(
-    private colaboradorService: CollaboratorService,
+    private colaboradorService: ColaboradorService,
     private route: ActivatedRoute,
     private modalService: ModalService,
     private router: Router
