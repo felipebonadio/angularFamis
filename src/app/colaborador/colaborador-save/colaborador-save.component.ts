@@ -26,10 +26,7 @@ export class ColaboradorSaveComponent implements OnInit {
     private adminService: AdminService
   ) {  }
 
-  ngOnInit(): void {
-    this.adminService
-      .getRestaurants()
-      .subscribe((restaurant) => (this.restaurante = restaurant[0]));        
+  ngOnInit(): void {       
   }
 
   colaboradorForm = this.formBuilder.group({
@@ -46,8 +43,7 @@ export class ColaboradorSaveComponent implements OnInit {
       this.colaborador.sobrenome = this.colaboradorForm.value.sobrenome;
       this.colaborador.telefone = this.colaboradorForm.value.telefone;
       this.colaborador.cpf = this.colaboradorForm.value.cpf;
-      this.colaborador.funcao = this.colaboradorForm.value.funcao;    
-      this.colaborador.restaurante = this.restaurante;     
+      this.colaborador.funcao = this.colaboradorForm.value.funcao;         
 
       this.collaboratorService.createCollaborator(collaborator).subscribe(
         (newcollaborator) => {

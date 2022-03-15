@@ -7,5 +7,4 @@ export interface Colaborador {
   telefone: string;
   cpf: string; 
   funcao: string;
-  restaurante: Restaurante;
 }
