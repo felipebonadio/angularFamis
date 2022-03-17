@@ -1,149 +1,20 @@
 <div class="container">
-  <div class="grid-card">
+  <div class="grid-card" *ngFor="let mesa of mesas">
     <mat-card class="card mat-elevation-z5">
       <mat-card-header>
         <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
-        <mat-card-title>Mesa 2</mat-card-title>
-        <mat-card-subtitle>Chegada: 18:32</mat-card-subtitle>
+        <mat-card-title>{{mesa.numero}}</mat-card-title>        
       </mat-card-header>
+      <div *ngFor="let produto of mesa.produto">
       <mat-card-content>
-        1 coca
-        <br />
-        1 fanta
-        <br />
-        1 pizza
+        {{produto.nome}}
       </mat-card-content>
+    </div>
       <mat-card-actions class="center">
-        <button mat-button>Fechar pedido</button>
-        <button mat-button>Saiu para entrega</button>
+        <button mat-button>Fechar pedido</button>       
       </mat-card-actions>
     </mat-card>
-    <mat-card class="card mat-elevation-z5">
-      <mat-card-header>
-        <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
-        <mat-card-title>Mesa 2</mat-card-title>
-        <mat-card-subtitle>Chegada: 18:32</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        1 coca
-        <br />
-        1 fanta
-        <br />
-        1 pizza
-      </mat-card-content>
-      <mat-card-actions class="center">
-        <button mat-button>Fechar pedido</button>
-        <button mat-button>Saiu para entrega</button>
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="card mat-elevation-z5">
-      <mat-card-header>
-        <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
-        <mat-card-title>Mesa 2</mat-card-title>
-        <mat-card-subtitle>Chegada: 18:32</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        1 coca
-        <br />
-        1 fanta
-        <br />
-        1 pizza
-      </mat-card-content>
-      <mat-card-actions class="center">
-        <button mat-button>Fechar pedido</button>
-        <button mat-button>Saiu para entrega</button>
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="card mat-elevation-z5">
-      <mat-card-header>
-        <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
-        <mat-card-title>Mesa 2</mat-card-title>
-        <mat-card-subtitle>Chegada: 18:32</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        1 coca
-        <br />
-        1 fanta
-        <br />
-        1 pizza
-      </mat-card-content>
-      <mat-card-actions class="center">
-        <button mat-button>Fechar pedido</button>
-        <button mat-button>Saiu para entrega</button>
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="card mat-elevation-z5">
-      <mat-card-header>
-        <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
-        <mat-card-title>Mesa 2</mat-card-title>
-        <mat-card-subtitle>Chegada: 18:32</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        1 coca
-        <br />
-        1 fanta
-        <br />
-        1 pizza
-      </mat-card-content>
-      <mat-card-actions class="center">
-        <button mat-button>Fechar pedido</button>
-        <button mat-button>Saiu para entrega</button>
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="card mat-elevation-z5">
-      <mat-card-header>
-        <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
-        <mat-card-title>Mesa 2</mat-card-title>
-        <mat-card-subtitle>Chegada: 18:32</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        1 coca
-        <br />
-        1 fanta
-        <br />
-        1 pizza
-      </mat-card-content>
-      <mat-card-actions class="center">
-        <button mat-button>Fechar pedido</button>
-        <button mat-button>Saiu para entrega</button>
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="card mat-elevation-z5">
-      <mat-card-header>
-        <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
-        <mat-card-title>Mesa 2</mat-card-title>
-        <mat-card-subtitle>Chegada: 18:32</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        1 coca
-        <br />
-        1 fanta
-        <br />
-        1 pizza
-      </mat-card-content>
-      <mat-card-actions class="center">
-        <button mat-button>Fechar pedido</button>
-        <button mat-button>Saiu para entrega</button>
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="card mat-elevation-z5">
-      <mat-card-header>
-        <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
-        <mat-card-title>Mesa 2</mat-card-title>
-        <mat-card-subtitle>Chegada: 18:32</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        1 coca
-        <br />
-        1 fanta
-        <br />
-        1 pizza
-      </mat-card-content>
-      <mat-card-actions class="center">
-        <button mat-button>Fechar pedido</button>
-        <button mat-button>Saiu para entrega</button>
-      </mat-card-actions>
-    </mat-card>
+    
     <mat-card class="card mat-elevation-z5">
       <mat-card-header>
         <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
